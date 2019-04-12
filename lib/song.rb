@@ -34,7 +34,17 @@ class Song
   end
   
   def self.find_or_create_by_name(name)
+<<<<<<< HEAD
     self.find_by_name(name) || self.create_by_name(name)
+=======
+    @@all.each do |song|  
+      if @@all.include?(song)
+        song.find_by_name(name)
+      else
+        song.create_by_name(name)
+      end
+    end  
+>>>>>>> fd20db731c26bbcf8f62ab54a4faee7a16e25bac
   end
   
   def self.alphabetical
@@ -51,6 +61,7 @@ class Song
     song = self.new
     song.name =name
     song.artist_name = artist_name
+<<<<<<< HEAD
     song
   end
   
@@ -70,5 +81,7 @@ class Song
   
   def self.destroy_all
     @@all.clear
+=======
+>>>>>>> fd20db731c26bbcf8f62ab54a4faee7a16e25bac
   end
 end
